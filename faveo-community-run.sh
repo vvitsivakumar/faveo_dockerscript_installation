@@ -262,6 +262,17 @@ echo -e "-------------------------------------\n"
 
 echo "Domain Name : $domainname";
 echo "Email: $email";
+if [ "$ssl_option" == "A" ]; then
+    echo "SSL Option: A - Let's Encrypt SSL"
+elif [ "$ssl_option" == "B" ]; then
+    echo "SSL Option: B - Self-Sign SSL"
+elif [ "$ssl_option" == "C" ]; then
+    echo "SSL Option: C - Paid SSL"
+else
+    echo "Invalid SSL option selected."
+fi
+
+echo -e "\n"
 echo -e "\n";
 read -p "Continue (y/n)?" REPLY
 
@@ -314,8 +325,6 @@ db_root_pw=$(openssl rand -base64 12)
 db_name=faveo
 db_user=faveo
 db_user_pw=$(openssl rand -base64 12)
-
-
 
 if [[ $? -eq 0 ]]; then
     rm -f .env
