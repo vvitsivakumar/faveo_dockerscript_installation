@@ -399,6 +399,7 @@ if [[ $? -eq 0 ]]; then
     ###################Credentials File Creation####################
     echo "Faveo Helpdesk Docker Setup Credentials" > credentials.txt
     echo "----------------------------------------" >> credentials.txt
+    echo "Faveo Docker installed successfully. Visit https://$domainname from your browser." >> credentials.txt
     echo "Database Hostname: faveo-mariadb" >> credentials.txt
     echo "Mysql Database root password: $db_root_pw" >> credentials.txt
     echo "Faveo Helpdesk name: $db_name" >> credentials.txt
